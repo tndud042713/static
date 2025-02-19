@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JSONP Redirect</title>
+</head>
+<body>
+    <script>
+        // URL에서 'callback' 파라미터 가져오기
+        function getQueryParam(param) {
+            const urlParams = new URLSearchParams(window.location.search);
+            return urlParams.get(param);
+        }
+
+        // 'callback' 파라미터 값 가져오기
+        const callback = getQueryParam("callback");
+
+        // JSONP 방식 실행 (callback 함수 호출)
+        if (callback) {
+            document.write(`<script>${callback}("Hacked!")<\/script>`);
+        }
+    </script>
+</body>
+</html>
